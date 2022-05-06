@@ -1,0 +1,861 @@
+@import '~antd/dist/antd.css';
+
+/* ======================================== FONT IMPORTS ======================================== */
+@font-face {
+    font-family: 'Schnyder Wide L Demi';
+    src: url('./assets/fonts/SchnyderWideLDemi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide L';
+    src: url('./assets/fonts/SchnyderWideLBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder-Wide-L';
+    src: url('./assets/fonts/SchnyderWideLLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SchnyderWideSBold';
+    src: url('./assets/fonts/SchnyderWideSBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder-Wide-M';
+    src: url('./assets/fonts/SchnyderWideMBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide M Demi';
+    src: url('./assets/fonts/SchnyderWideMDemi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide M';
+    src: url('./assets/fonts/SchnyderWideMLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide XL Demi';
+    src: url('./assets/fonts/SchnyderWideXLDemi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide S Demi';
+    src: url('./assets/fonts/SchnyderWideSDemi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide S';
+    src: url('./assets/fonts/SchnyderWideSLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide XL';
+    src: url('./assets/fonts/SchnyderWideXLBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Schnyder Wide XL';
+    src: url('./assets/fonts/SchnyderWideXLLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Radikal';
+    src: url('./assets/fonts/Radikal-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RadikalW03';
+    src: url('./assets/fonts/RadikalW03-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RadikalW03';
+    src: url('./assets/fonts/RadikalW03-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RadikalW03-Light';
+    src: url('./assets/fonts/RadikalW03-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RadikalW03';
+    src: url('./assets/fonts/RadikalW03-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RadikalW03-Thin';
+    src: url('./assets/fonts/RadikalW03-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CinzelDecorative-Black';
+    src: url('./assets/fonts/CinzelDecorative-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CinzelDecorative-Bold';
+    src: url('./assets/fonts/CinzelDecorative-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CinzelDecorative-Regular';
+    src: url('./assets/fonts/CinzelDecorative-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ======================================= HELPER CLASSES ======================================= */
+.DisplayFlex { display: flex; }
+.DisplayFlexColumn { display: flex; flex-direction: column; }
+.FlexRow { display: flex; align-items: center; }
+.FlexRowBox { display: flex; align-items: center; justify-content: center; }
+.FlexColumnBox { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.FlexRowSpace { display: flex; align-items: center; justify-content: space-between; }
+.FlexColumnSpace { display: flex;  flex-direction: column; justify-content: space-between; }
+.FlexColumnCenter { display: flex;  flex-direction: column; justify-content: center; }
+
+.FullWidthHeight { width: 100%; height: 100%; }
+.FullWidth { width: 100%; }
+.FullHeight { height: 100%; }
+.HalfWidthHeight { width: 50%; height: 50%; }
+.HalfWidth { width: 50%; }
+.HalfHeight { height: 50%; }
+
+.NoPaddingMargin { padding: 0px; margin: 0px; }
+
+.NoMargin { margin: 0 !important;}
+.Margin { margin: 24px; }
+.MarginTop { margin-top: 7.5vw; }
+.MarginBottom { margin-bottom: 24px; }
+.MarginLeft { margin-left: 24px; }
+.MarginRight { margin-right: 24px; }
+.HalfMargin { margin: 12px; }
+.HalfMarginTop { margin-top: 12px !important;}
+.HalfMarginBottom { margin-bottom: 12px; }
+.HalfMarginLeft { margin-left: 3.75vw; }
+.HalfMarginRight { margin-right: 3.75vw; }
+
+.NoPadding { padding: 0 !important;}
+.Padding { padding: 24px; }
+.PaddingTop { padding-top: 24px; }
+.PaddingBottom { padding-bottom: 24px; }
+.PaddingLeft { padding-left: 24px; }
+.PaddingRight { padding-right: 24px; }
+.HalfPadding { padding: 12px; }
+.HalfPaddingTop { padding-top: 12px; }
+.HalfPaddingBottom { padding-bottom: 12px; }
+.HalfPaddingLeft { padding-left: 12px; }
+.HalfPaddingRight { padding-right: 12px; }
+
+.PrimaryColor { color: #1C75BC; }
+.SecondaryColor { color: #00C2CB; }
+.BlackColor { color: #333333; }
+.WhiteColor { color: #FFFFFF; }
+
+.AbsolutePosition { position: absolute; }
+.NoOpacity { opacity: 0; }
+.NoAlpha { opacity: 0; visibility: hidden;}
+
+.ContentPadding { padding: 10vw !important; }
+.LeftContentPadding { padding-left: 10vw; }
+.RightContentPadding { padding-right: 10vw; }
+
+.CenterAlign { text-align: center; }
+.RightAlign { text-align: right; }
+.OverflowYScroll { overflow-y: scroll; }
+.ZIndex2 { z-index: 2; }
+
+/* ======================================== BASE CLASSES ======================================== */
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+    /* cursor: none !important; */
+    /* border: 1px solid #FF0000; */
+}
+
+html, body {
+    font-size: min(1.1vw, 1.95vh);
+    line-height: inherit;
+    color: #00134B;
+    margin: 0;
+	padding: 0;
+    /* cursor: none; */
+    overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+#root {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+    background: linear-gradient(45deg, #99BBFF 0%, #FFE6F7 25%, #FFFFFF 50%, #FFE6F7 75%, #99BBFF 100%);
+}
+
+.fullpage-wrapper, 
+.ContentBox {
+	position: absolute !important;
+}
+.fullpage-wrapper {
+    z-index: 1;
+}
+
+.fp-tableCell {
+	vertical-align: top !important;
+}
+
+.ContentBox > div {
+    position: absolute;
+    padding: 5.85vh 4.167vw;
+    /* padding: 48px 60px; */
+}
+
+a, a:hover { color: inherit; text-decoration: none;} 
+p { margin: 0px }
+
+/* ======================================= EMBLEM CLASSES ======================================= */
+.Emblem {
+    position: absolute;
+    height: 75vh;
+    width: auto;
+    left: 80%;
+    top: 12.5vh;
+    filter: blur(10px);
+    opacity: 0.75;
+}
+
+/* ======================================= HEADER CLASSES ======================================= */
+.CompanyLogo {
+	height: 48px;
+	width: auto;
+}
+
+/* ====================================== CALL TO ACTIONS ====================================== */
+#MobileFooter {
+    padding-bottom: 10vh !important;
+}
+
+.CTAbutton,
+.MobileFooterCTA  {
+    width: 175px;
+    height: 48px;
+    font-family: 'SchnyderWideSBold';
+    color: #FFFFFF;
+    font-size: 22px;
+    background: #023786;
+    box-shadow: -1px -1px 2px rgba(5, 108, 219, 0.35), 3px 3px 3px rgba(5, 108, 219, 0.43);
+    border-radius: 24px;
+    transition: 0.5s;
+}
+
+.MobileFooterCTA  {
+    width: 35vw;
+    height: 12vw;
+    font-size: 4vw;
+    background: #376cb4;
+    box-shadow: none;
+    border-radius: 100px;
+}
+
+.CTAbutton:hover {
+    color: #023786;
+    background: linear-gradient(90.33deg, #E4E8FB 2.95%, #C1D5FD 97.69%);
+    box-shadow: inset -1px -2px 3px #E9EFFF, inset 2px 3px 4px rgba(92, 171, 255, 0.38);
+}
+
+/* ======================================= FOOTER CLASSES ======================================= */
+.ScrollGif {
+    height: 4.7vh;
+    width: auto;
+    margin-bottom: 12px;
+}
+.ScrollToContinue {
+    font-family: 'RadikalW03-Thin';
+}
+.Links {
+    font-family: 'RadikalW03-Light';
+    font-size: 16px;
+}
+.Links:hover {
+    text-decoration: underline;
+}
+.MobileFooterLinks {
+    font-family: 'RadikalW03-Light';
+    font-size: 12px;
+}
+
+.SocialMediaIcons {
+    height: 7.5vw;
+    width: auto;
+}
+
+
+/* ========================================= HERO TEXT ========================================= */
+.HeroTitle {
+    font-family: 'Schnyder-Wide-M';
+    font-size: 7vw;
+    margin-bottom: 24px;
+}
+
+.HeroDescription {
+    font-family: 'RadikalW03-Thin';
+    font-size: 3vw;
+}
+
+/* ========================================= JOHN LENNON PAGE ========================================= */
+#JohnLennonSlideContent {
+    /* height: 45vh; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+.Quotes {
+    height: 45vh;
+    font-family: 'CinzelDecorative-Regular';
+    font-size: 2vw;
+    margin: 0px;
+}
+
+.JohnLennon {
+    height: 45vh;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+
+.Signature {
+    width: 250px;
+    height: auto;
+}
+
+
+/* ======================================= JOURNEY TITLES ======================================= */
+.TopLeft { top: 0px; left: 0px; }
+.TopRight { top: 0px; right: 0px; }
+.BottomRight { bottom: 0px; right: 0px; }
+.BottomLeft { bottom: 0px; left: 0px; }
+
+.JourneyTitles > p {
+    font-family: 'Radikal';
+    font-size: 4.2vw;
+    /* font-size: min(3vw, 5.4vh); */
+    margin: 0px;
+    /* padding: 144px; */
+    padding-top: 17.54vh;
+    padding-bottom: 17.54vh; 
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
+/* ========================================= NAVIGATION ========================================= */
+.NavigationVisibility {
+    visibility: hidden;
+}
+.NoPointerEvent > ul > li, 
+.NoPointerEvent > #MenuEmblem > .MenuEmblemProps {
+    pointer-events: none;
+}
+
+.fp-right > ul > li {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 24px !important;
+}
+.fp-right > ul > li:nth-child(-n+3) {
+    display: none !important;
+    pointer-events: none;
+}
+.fp-right > ul > li > .active > span {
+    background: #00134B !important;
+}
+.fp-right > ul > li > a > span {
+    background: transparent !important;
+    border: 1px solid #00134B !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0px !important;
+    top: 0% !important;
+    left: 0% !important;
+}
+
+.WhiteNavigation > ul > li > .active > span {
+    background: #FFFFFF !important;
+}
+.WhiteNavigation > ul > li > a > span {
+    border: 1px solid #FFFFFF !important;
+}
+.WhiteNavigation > #MenuEmblem > .MenuEmblemProps {
+    stroke: #FFFFFF;
+}
+
+/* ======================================= MODAL SETTINGS ======================================= */
+.ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur( 5.0px );
+    -webkit-backdrop-filter: blur( 5.0px );
+}
+.ant-modal {
+    padding: 0px;
+}
+
+.BecomePartnerModal {
+	width: 65vh !important;
+}
+.BecomePartnerModal > .ant-modal-content > .ant-modal-body {
+    height: 65vh !important;
+    padding: 24px;
+    overflow: scroll;
+}
+
+.JoinTeamModal {
+	width: 65vw !important;
+}
+.JoinTeamModal > .ant-modal-content > .ant-modal-body {
+    /* max-height: 70vh !important; */
+    height: 65vh !important;
+    padding: 0px;
+}
+
+.ant-modal-content {
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0.25) 100%);  */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    backdrop-filter: blur(15.0px);
+    -webkit-backdrop-filter: blur(15.0px);
+}
+.ant-modal-header {
+    background: initial;
+    border-bottom: 2px solid #FFFFFF;
+    padding: 18px 24px;
+}
+.ant-modal-title {
+    font-family: 'SchnyderWideSBold';
+    font-size: 20px;
+    color: #00134B;
+}
+.ant-modal-footer {
+    border-top: 2px solid #FFFFFF;
+}
+
+.ant-modal-footer .ant-btn {
+    margin-left: 12px !important;
+}
+.FooterButtons {
+    width: 25%;
+    height: 48px;
+    border-radius: 5px;
+    font-family: 'Radikal';
+    font-size: 16px;
+    cursor: pointer;
+}
+.NextButton, 
+.NextButton:hover, 
+.NextButton:focus {
+    background: #2E94FA;
+    color: #FFFFFF;
+    border: 0px;
+}
+.PreviousButton, 
+.PreviousButton:hover, 
+.PreviousButton:focus {
+    width: 12.5%;
+    background: #F2F2F2;
+    color: #333333;
+    border: 1px solid #333333;
+}
+.SubmitButton, 
+.SubmitButton:hover, 
+.SubmitButton:focus {
+    background: #0B8000;
+    color: #FFFFFF;
+    border: 0px;
+}
+
+/* ==================================== ANTD STEPS SETTINGS ==================================== */
+.ant-steps {
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 50%, rgba(0, 19, 75, 0.25) 100%);  */
+    /* background: rgba(0, 19, 75, 0.75); */
+    /* background: rgba(255, 255, 255, 0.25); */
+    background: #FFFFFF;
+    /* backdrop-filter: blur(10.0px);
+    -webkit-backdrop-filter: blur(10.0px); */
+    padding: 12px 24px;
+}
+
+.ant-steps-item-title, 
+.ant-steps-item-icon {
+    font-family: 'Radikal';
+}
+
+.ant-steps-item-icon > .ant-steps-icon {
+    top: 0px;
+} 
+
+.ant-steps-item-title::after {
+    background-color: #00134B !important;
+}
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon,
+.ant-steps-item-process .ant-steps-item-icon {
+    background: #2E94FA;
+    border-color: #2E94FA;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+    background: #0B8000;
+    border-color: #0B8000;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+    color: #FFFFFF;
+    top: 0.5px;
+}
+
+.StepsContent {
+    box-sizing: border-box;
+    height: calc(100% - 48px);
+    padding: 24px;
+    padding-bottom: 0px;
+    overflow: scroll;
+}
+
+/* ================================== ANTD FORM ITEMS SETTINGS ================================== */
+.HalfFormItemWidth { width: calc(50% - 12px); }
+
+.InputField, 
+.SelectField > .ant-select-selector {
+    width: 100%;
+    min-height: 48px !important;
+    display: flex;
+    align-items: center;
+    font-family: 'RadikalW03-Light';
+    color: #00134B;
+    background: inherit !important;
+    border-radius: 5px !important;
+    border: 1px solid rgba(0, 19, 75, 0.15);
+    padding: 6px 12px;
+}
+
+.ant-form-item-label {
+    font-family: 'Radikal';
+    color: #00134B;
+    font-size: 14px;
+}
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+	display: none;
+}
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::after {
+	display: inline-block;
+	content: '*';
+	font-family: 'Radikal';
+	font-size: 14px;
+    color: #ff0000;
+    margin-left: 6px;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+    background: #00134B;
+    color: #FFFFFF;
+}
+.ant-select-multiple .ant-select-selection-item-content {
+    margin-right: 6px;
+}
+.ant-select-multiple .ant-select-selection-item-remove {
+    color: #FFFFFF;
+}
+
+.ant-upload.ant-upload-drag {
+    border: 1px dashed #808080;
+}
+
+/* ======================================== GET IN TOUCH ======================================== */
+.ContactTitle {
+    font-family: 'Radikal';
+    font-size: 7vw;
+    /* font-size: min(3.82vw, 6.7vh); */
+}
+
+/* ========================================= MENU SLIDE ========================================= */
+#MenuEmblem  {
+    display: flex;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.MenuEmblemProps { 
+    width: 24px;   
+    fill-opacity: 0;
+    stroke: black;
+    stroke-width: 24px;
+}
+.MenuEmblemProps:hover {
+    fill-opacity: 100;
+    stroke-width: 0px;
+}
+
+.SlideMenu {
+    color: #1C75BC;
+}
+.SlideMenu:hover {
+    color: #333;
+}
+
+.MenuTitleNumber {
+    font-family: 'Radikal';
+    font-size: 28px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.MenuTitle {
+    font-family: 'Radikal';
+    font-size: min(0.972222222vw, 1.705237515vh);
+    cursor: pointer;
+}
+
+.Slide1Menu {
+    top: calc(25vh - 114px);
+    left: calc((1600vw - 721vh)/32);
+}
+
+.Slide2Menu {
+    top: calc(25vh - 35px);
+    left: calc((1600vw + 721vh)/32  - 77px);
+}
+
+.Slide3Menu {
+    top: calc(50vh - 65px);
+    left: calc((1600vw + 721vh)/32 + 24px);
+}
+
+.Slide4Menu {
+    top: calc(75vh - 100px);
+    left: calc((1600vw + 721vh)/32 - 89.5px);
+}
+
+.Slide5Menu {
+    top: calc(75vh + 24px);
+    left: calc((1600vw - 721vh)/32);
+}
+
+.Slide6Menu {
+    top: calc(75vh - 111px);
+    right: calc((1600vw + 721vh)/32 + 24px);
+}
+
+.Slide7Menu {
+    top: calc(50vh - 19px);
+    right: calc(50vw + 24px);
+}
+
+
+/* ======================================= RESPONSIVENESS ======================================= */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* All smaller than medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+    .CTAbutton,
+    #Scroll,
+    .Links {
+        display: none;
+    }
+    #Header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .Quotes {
+        height: min-content;
+        font-size: 4.5vw;
+        padding-top: 10vw;
+    }
+    .Quotes > p {
+        text-align: center;
+        line-height: 120%;
+        padding-bottom: 5vw;
+    }
+    .JohnLennon {
+        height: 35vh;
+    }
+    .Signature {
+        width: 30vw;
+        padding-top: 5vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #MobileFooter { display: none; }
+    .HeroTitle { font-size: 5.5vw; }
+    .HeroDescription { font-size: 2.5vw; }
+    .JourneyTitles > p { font-size: 4vw; }
+    .ScrollToContinue { font-size: 16px; }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* All smaller than large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1199px) {
+    #MenuEmblem,
+    .fp-right > ul > li {
+        display: none !important;
+    }
+
+    #Scroll,
+    #WebFooter {
+        padding-bottom: 10vh !important;
+    }
+
+    #JohnLennonSlide {
+        justify-content: flex-end;
+        padding-bottom: 10vh !important;
+    }
+    #JohnLennonSlideContent {
+        height: auto;
+        flex-direction: column;
+    } 
+    #JohnLennon,
+    #Quotes,
+    #Signature {
+        position: static;
+        padding: 0px;
+    }
+    #JohnLennon { order: 1; }
+    #Quotes { order: 2;}
+    #Signature { order: 3; }
+    .Quotes {
+        height: min-content;
+        font-size: 4.5vw;
+        padding-top: 7vw;
+    }
+    .Quotes > p {
+        text-align: center;
+        line-height: 120%;
+        padding-bottom: 3.5vw;
+    }
+    .JohnLennon {
+        height: 35vh;
+    }
+    .Signature {
+        width: 30vw;
+        padding-top: 3.5vw;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .ContactTitle { font-size: 4vw; }
+    .HeroTitle { font-size: 3.80vw; }
+    .HeroDescription { font-size: 1.90vw; }
+    .JourneyTitles > p { font-size: 2.7vw; }
+}
+
+
+.FormResultTitle {
+    font-family: 'Radikal';
+    font-size: 24px;
+}
+.ant-result-extra {
+    width: 100%;
+}
+.FormResultSubTitle {
+    font-family: 'RadikalW03-Light';
+    font-size: 12px;
+    color: #333333;
+}
+.GoogleFormLink,
+.GoogleFormLink:hover,
+.GoogleFormLink:focus,
+.GoogleFormLink:active {
+    color: #1C75BC;
+    text-decoration: underline;
+}
+
+.ResultButton, 
+.ResultButton:hover, 
+.ResultButton:focus {
+    background: #FFFFFF;
+    color: #333333;
+    border: 1px solid #808080;
+}
